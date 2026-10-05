@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,14 +7,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float torqueAmount = 5f;
     [SerializeField] private float boostSpeed = 35f;
     [SerializeField] ParticleSystem snowEffect, boostEffect;
-   
+    [SerializeField] ScoreManager scoreManager;
 
+    Rigidbody2D rb;
     SurfaceEffector2D surfaceEffector2D;
-    float defaultSpeed;
 
+    float defaultSpeed;
     InputAction moveAction;
     Vector2 moveInput;
-    Rigidbody2D rb;
+    float previousRotation, totalRotation;
+    int flipCount;
+    
 
     private bool canControlPlayer = true; 
     public bool CanControlPlayer { get => canControlPlayer; set => canControlPlayer = value; }
@@ -38,13 +42,32 @@ public class PlayerController : MonoBehaviour
         {
             PlayerTorque();
             BoostPlayer();
+            CalculateFlips();
         }
 
     }
-    
-        /// <summary>
-        /// Based on the horizontal input, apply torque to the Rigidbody2D to rotate the player
-        /// </summary>
+
+/// <summary>
+/// calculates amount of flips inair
+/// </summary>
+    private void CalculateFlips()
+    {
+        float currentRotation = transform.rotation.eulerAngles.z;
+        totalRotation += Mathf.DeltaAngle(previousRotation, currentRotation);
+        
+        if(Math.Abs(totalRotation) >= 340f)
+        {
+            flipCount++;
+            scoreManager.AddScore(flipCount*100);
+            totalRotation = 0;
+        }
+
+        previousRotation = currentRotation;
+    }
+
+    /// <summary>
+    /// Based on the horizontal input, apply torque to the Rigidbody2D to rotate the player
+    /// </summary>
     void PlayerTorque()
     {
         moveInput = moveAction.ReadValue<Vector2>();
@@ -96,7 +119,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-      void OnCollisionExit2D(Collision2D collission)
+    void OnCollisionExit2D(Collision2D collission)
     {
         int layerIndex= LayerMask.NameToLayer("Floor");
         if (collission.gameObject.layer == layerIndex)
