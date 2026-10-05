@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float torqueAmount = 5f;
     [SerializeField] private float boostSpeed = 35f;
-    [SerializeField] ParticleSystem snowEffect;
+    [SerializeField] ParticleSystem snowEffect, boostEffect;
+   
 
     SurfaceEffector2D surfaceEffector2D;
     float defaultSpeed;
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     Vector2 moveInput;
     Rigidbody2D rb;
+
+    private bool canControlPlayer = true; 
+    public bool CanControlPlayer { get => canControlPlayer; set => canControlPlayer = value; }
 
 
 
@@ -29,8 +33,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerTorque();
-        BoostPlayer();
+        if (!canControlPlayer) return;
+        if (canControlPlayer)
+        {
+            PlayerTorque();
+            BoostPlayer();
+        }
 
     }
     
@@ -70,7 +78,21 @@ public class PlayerController : MonoBehaviour
         int layerIndex= LayerMask.NameToLayer("Floor");
         if (collission.gameObject.layer == layerIndex)
         {
-            snowEffect.Play();
+            if(moveInput.y > 0)
+            {
+                if (boostEffect.isPlaying == false)
+                {
+                    boostEffect.Play();
+                }
+            }
+            else
+            {
+                if (snowEffect.isPlaying == false)
+                {
+                    snowEffect.Play();
+                }
+            }
+            
         }
     }
 
@@ -80,6 +102,7 @@ public class PlayerController : MonoBehaviour
         if (collission.gameObject.layer == layerIndex)
         {
             snowEffect.Stop();
+            boostEffect.Stop();
         }
     }
 }

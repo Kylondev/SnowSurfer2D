@@ -5,12 +5,19 @@ public class CrashDetector : MonoBehaviour
 {
     [SerializeField] float reloadDelay = 1f; // Delay before reloading the scene
     [SerializeField] ParticleSystem deathEffect; // Particle effect to play when the player dies
+     PlayerController playerController;
+
+void Start()
+    {
+        playerController = FindAnyObjectByType<PlayerController>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         int layerIndex = LayerMask.NameToLayer("Floor");
         if (other.gameObject.layer == layerIndex)
         {
+            playerController.CanControlPlayer = false; // Disable player control
             deathEffect.Play();
             Invoke(nameof(ReloadScene), reloadDelay);
         }
