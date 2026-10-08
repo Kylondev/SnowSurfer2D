@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     float previousRotation, totalRotation;
     int flipCount;
+    int activePowerUpsCount;
     
 
     private bool canControlPlayer = true; 
@@ -63,6 +64,30 @@ public class PlayerController : MonoBehaviour
         }
 
         previousRotation = currentRotation;
+    }
+
+    public void ApplyPowerUp(PowerUpScriptableObject powerUpData)
+    {
+        activePowerUpsCount++;
+        if (powerUpData.PowerUpType == "Speed")
+        {
+            defaultSpeed += powerUpData.PowerUpValue;
+            boostSpeed += powerUpData.PowerUpValue;
+        }
+    }
+
+    public void DeactivatePowerUp(PowerUpScriptableObject powerUpData)
+    {
+        activePowerUpsCount--;
+        if (activePowerUpsCount == 0)
+        {
+            if (powerUpData.PowerUpType == "Speed")
+            {
+                defaultSpeed -= powerUpData.PowerUpValue;
+                boostSpeed -= powerUpData.PowerUpValue;
+            }
+        }
+
     }
 
     /// <summary>
@@ -128,4 +153,5 @@ public class PlayerController : MonoBehaviour
             boostEffect.Stop();
         }
     }
+
 }
