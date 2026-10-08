@@ -12,15 +12,29 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("Player has reached the finish line!");
             finishEffect.Play(); // Play the particle effect
-            // Reloads the scene after the specified time
-            Invoke(nameof(ReloadScene), reloadDelay);
+
+           
+
+            // Goes to next level and saves the highest unlocked level number
+            Invoke(nameof(NextLevel), reloadDelay);
         }
     }
 
-    void ReloadScene()
+    void NextLevel()
     {
-        // Reload the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+         int unlockedLevel = PlayerPrefs.GetInt("unlockedLevel", 1);
+        PlayerPrefs.SetInt("unlockedLevel", unlockedLevel + 1);
+        PlayerPrefs.Save();
+        if (unlockedLevel >= 4)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+           SceneManager.LoadScene(($"Level{unlockedLevel++}")); 
+        }
+        
+        
     }
 
 
