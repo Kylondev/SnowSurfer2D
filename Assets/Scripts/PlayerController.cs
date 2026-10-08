@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,9 +19,9 @@ public class PlayerController : MonoBehaviour
     float previousRotation, totalRotation;
     int flipCount;
     int activePowerUpsCount;
-    
 
-    private bool canControlPlayer = true; 
+
+    private bool canControlPlayer = true;
     public bool CanControlPlayer { get => canControlPlayer; set => canControlPlayer = value; }
 
 
@@ -28,11 +29,11 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.GetChild(0).GetChild(PlayerPrefs.GetInt("SelectedCharacter", 0)).gameObject.SetActive(true);
         moveAction = InputSystem.actions.FindAction("Move");
         rb = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindAnyObjectByType<SurfaceEffector2D>();
         defaultSpeed = surfaceEffector2D.speed; //stores the initial speed of the SurfaceEffector2D component
-        
     }
 
     // Update is called once per frame

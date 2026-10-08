@@ -3,6 +3,7 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] private PowerUpScriptableObject powerUpData;
+    [SerializeField] ParticleSystem PowerUpEffect;
 
     PlayerController playerController;
     SpriteRenderer powerUpSpriteRenderer;
@@ -47,7 +48,10 @@ public class PowerUpManager : MonoBehaviour
         {
             powerUpSpriteRenderer.enabled = false;
             playerController.ApplyPowerUp(powerUpData);
-            
+
+            PowerUpEffect.Play();
         }
     }
+
+
 }
