@@ -1092,8 +1092,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89, y: 5}
-  m_SizeDelta: {x: 100.0882, y: 212.9118}
+  m_AnchoredPosition: {x: 16, y: 130}
+  m_SizeDelta: {x: 324.5875, y: 110.2428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113458382
 MonoBehaviour:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3819293021117696179, guid: 3a81dc91d1c1bae40931b63bd6a3288a, type: 3}
+  m_Sprite: {fileID: -7467993318636626866, guid: 8e0a1fab14e0a0b449fc830acd3dffa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4296731722166109183, guid: 43f0a710d4af93f4698e0e8a8ba21615, type: 3}
+  m_Sprite: {fileID: -5799120038317175790, guid: 8e0a1fab14e0a0b449fc830acd3dffa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4832618155596115187, guid: 3089308cc46b07b4a82607e48ce69995, type: 3}
+  m_Sprite: {fileID: -5799120038317175790, guid: 8e0a1fab14e0a0b449fc830acd3dffa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1959,9 +1959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'super mega cool
-
-    snow surfer game'
+  m_text: cat sliders
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0fe90cfe2f8b4b64bb75c695aa9e690c, type: 2}
   m_sharedMaterial: {fileID: 5536623845488443724, guid: 0fe90cfe2f8b4b64bb75c695aa9e690c, type: 2}

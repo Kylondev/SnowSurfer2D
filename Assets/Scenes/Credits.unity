@@ -563,7 +563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "GAME DIRECTOR\n meowl\n\nGAME DESIGNER\nmeowl\n\nASSET DESIGN\nsnow surfer assets\n"
+  m_text: "GAME DIRECTOR\n Daniel\n\nGAME DESIGNER\ndaniel\n\nASSET DESIGN\nDANIEL\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0fe90cfe2f8b4b64bb75c695aa9e690c, type: 2}
   m_sharedMaterial: {fileID: 5536623845488443724, guid: 0fe90cfe2f8b4b64bb75c695aa9e690c, type: 2}
