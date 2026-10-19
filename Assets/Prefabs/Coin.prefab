@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860021322480855285}
   - component: {fileID: 8793235353573288892}
+  - component: {fileID: -6983341864498080728}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -64,7 +65,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -80,6 +81,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2211838, y: 2.7585018}
   m_EdgeRadius: 0
+--- !u!114 &-6983341864498080728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621195879698385234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e0a68b7c8d3344b96c3cb744bfe98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  coinPoints: 10
+  coinParticle: {fileID: 8038787425880737975}
+  scoreManager: {fileID: 0}
 --- !u!1 &4322396055987167671
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +200,7 @@ GameObject:
   - component: {fileID: 8038787425880737975}
   - component: {fileID: 1044500450385375441}
   m_Layer: 0
-  m_Name: PowerUpParticle
+  m_Name: CoinParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

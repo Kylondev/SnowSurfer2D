@@ -2400,9 +2400,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7277954426931895812}
   - component: {fileID: 1060096136187901866}
-  - component: {fileID: 6863226230963230713}
+  - component: {fileID: 584873100455782294}
   m_Layer: 0
-  m_Name: PowerUpShortSpeedBoost
+  m_Name: PowerUpTimeSlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2471,7 +2471,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2003212, y: 2.200321}
   m_EdgeRadius: 0
---- !u!114 &6863226230963230713
+--- !u!114 &584873100455782294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2480,8 +2480,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7501390589893408323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5311e64f3ca6bbf44bf130976f53e684, type: 3}
+  m_Script: {fileID: 11500000, guid: 468cbf1f2a784834caf842888173638b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
-  powerUpData: {fileID: 11400000, guid: 423827fa0946f7c488f0f7bac1b4dbc6, type: 2}
-  PowerUpEffect: {fileID: 6038578369034056008}
+  m_EditorClassIdentifier: Assembly-CSharp::TimeSlow
+  powerUpParticle: {fileID: 6038578369034056008}

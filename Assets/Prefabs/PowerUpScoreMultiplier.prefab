@@ -2400,9 +2400,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7277954426931895812}
   - component: {fileID: 1060096136187901866}
-  - component: {fileID: 6863226230963230713}
   m_Layer: 0
-  m_Name: PowerUpLongSpeedBoost 1
+  m_Name: PowerUpScoreMultiplier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2471,17 +2470,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2003212, y: 2.200321}
   m_EdgeRadius: 0
---- !u!114 &6863226230963230713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7501390589893408323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5311e64f3ca6bbf44bf130976f53e684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
-  powerUpData: {fileID: 11400000, guid: d1c5bec1f5c979444935ee21131d4fdd, type: 2}
-  PowerUpEffect: {fileID: 9031035237576238837}

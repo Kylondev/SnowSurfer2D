@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 108509749730555692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.005800009, y: 0.10500002, z: 0}
+  m_LocalPosition: {x: 0.005800009, y: -0.014999986, z: 0}
   m_LocalScale: {x: 0.6716544, y: 0.36739495, z: 0.6716544}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4856,7 +4856,7 @@ Transform:
   m_GameObject: {fileID: 6193929566917431514}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7251,8 +7251,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.39657, y: 1.51854, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3850644764886912138}
   - {fileID: 8202049231395645402}
@@ -7285,7 +7285,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &3365129802755091060
 CapsuleCollider2D:
@@ -7321,8 +7321,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.08848153, y: -1.1936082}
-  m_Size: {x: 3.338389, y: 0.761574}
+  m_Offset: {x: 0.11885941, y: -1.1085471}
+  m_Size: {x: 3.715097, y: 0.81018126}
   m_Direction: 1
 --- !u!58 &6675455661464980212
 CircleCollider2D:
@@ -7358,8 +7358,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.5559272, y: 0.90705895}
-  m_Radius: 0.81456983
+  m_Offset: {x: 0.09166309, y: 0.8463005}
+  m_Radius: 1.0636766
 --- !u!114 &7153705490932664491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7372,7 +7372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299987c4b1d1d05428dc485e89d4bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  torqueAmount: 20
+  torqueAmount: 50
   boostSpeed: 35
   snowEffect: {fileID: 5902861953598086674}
   boostEffect: {fileID: 6463813841548978527}
@@ -7417,8 +7417,8 @@ Transform:
   m_GameObject: {fileID: 9167026161176207017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13639998, y: 0.20630002, z: 0}
-  m_LocalScale: {x: 0.75221384, y: 0.75221384, z: 0.75221384}
+  m_LocalPosition: {x: 0.04, y: -0.010000005, z: 0}
+  m_LocalScale: {x: 0.84751934, y: 0.84751934, z: 0.84751934}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3850644764886912138}

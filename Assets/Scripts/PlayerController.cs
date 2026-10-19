@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float torqueAmount = 5f;
     [SerializeField] private float boostSpeed = 35f;
+    // [SerializeField] private float jumpForce = 15f;
     [SerializeField] ParticleSystem snowEffect, boostEffect;
     [SerializeField] ScoreManager scoreManager;
 
@@ -45,10 +47,19 @@ public class PlayerController : MonoBehaviour
             PlayerTorque();
             BoostPlayer();
             CalculateFlips();
+            // Jump();
         }
 
     }
 
+
+    // void Jump()
+    // {
+    //     if (Keyboard.current.spaceKey.wasPressedThisFrame)
+    //     {
+    //         rb.AddForce(Vector2.up * jumpForce);
+    //     }
+    // }
 /// <summary>
 /// calculates amount of flips inair
 /// </summary>
@@ -107,6 +118,9 @@ public class PlayerController : MonoBehaviour
             rb.AddTorque(-torqueAmount);
         }
     }
+   
+
+
 
     void BoostPlayer()
     {
@@ -120,6 +134,11 @@ public class PlayerController : MonoBehaviour
             surfaceEffector2D.speed = defaultSpeed;
         }
 
+    }
+
+    public void coinSpeed()
+    {
+        defaultSpeed += 5f;
     }
 
     void OnCollisionEnter2D(Collision2D collission)
