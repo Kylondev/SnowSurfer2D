@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float torqueAmount = 5f;
     [SerializeField] private float boostSpeed = 35f;
-    // [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float jumpForce = 15f;
     [SerializeField] ParticleSystem snowEffect, boostEffect;
     [SerializeField] ScoreManager scoreManager;
+    // [SerializeField] bool isGrounded;
 
     Rigidbody2D rb;
     SurfaceEffector2D surfaceEffector2D;
@@ -47,19 +48,24 @@ public class PlayerController : MonoBehaviour
             PlayerTorque();
             BoostPlayer();
             CalculateFlips();
-            // Jump();
+            Jump();
+
+          
         }
 
     }
 
 
-    // void Jump()
-    // {
-    //     if (Keyboard.current.spaceKey.wasPressedThisFrame)
-    //     {
-    //         rb.AddForce(Vector2.up * jumpForce);
-    //     }
-    // }
+    void Jump()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            rb.linearVelocity = new Vector2 (rb.linearVelocity.x, jumpForce);
+        }
+    }
+
+
+
 /// <summary>
 /// calculates amount of flips inair
 /// </summary>

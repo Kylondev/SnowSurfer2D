@@ -7374,9 +7374,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   torqueAmount: 50
   boostSpeed: 35
+  jumpForce: 15
   snowEffect: {fileID: 5902861953598086674}
   boostEffect: {fileID: 6463813841548978527}
   scoreManager: {fileID: 0}
+  isGrounded: 0
 --- !u!114 &3886996216879281175
 MonoBehaviour:
   m_ObjectHideFlags: 0
