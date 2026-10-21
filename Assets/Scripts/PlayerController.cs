@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float torqueAmount = 5f;
     [SerializeField] private float boostSpeed = 35f;
     [SerializeField] private float jumpForce = 15f;
+    [SerializeField] bool isGrounded;
     [SerializeField] ParticleSystem snowEffect, boostEffect;
     [SerializeField] ScoreManager scoreManager;
     // [SerializeField] bool isGrounded;
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded == true)
         {
             rb.linearVelocity = new Vector2 (rb.linearVelocity.x, jumpForce);
         }
@@ -150,8 +151,10 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collission)
     {
         int layerIndex= LayerMask.NameToLayer("Floor");
+        isGrounded = true;
         if (collission.gameObject.layer == layerIndex)
         {
+            
             if(moveInput.y > 0)
             {
                 if (boostEffect.isPlaying == false)
@@ -161,6 +164,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                
                 if (snowEffect.isPlaying == false)
                 {
                     snowEffect.Play();
@@ -168,6 +172,7 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+        
     }
 
     void OnCollisionExit2D(Collision2D collission)
@@ -175,6 +180,7 @@ public class PlayerController : MonoBehaviour
         int layerIndex= LayerMask.NameToLayer("Floor");
         if (collission.gameObject.layer == layerIndex)
         {
+            isGrounded = false;
             snowEffect.Stop();
             boostEffect.Stop();
         }

@@ -2473,8 +2473,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8159169627225990007}
   - {fileID: 457040784140894772}
+  - {fileID: 8159169627225990007}
   - {fileID: 2092400375699991631}
   m_Father: {fileID: 7824584747158044118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7372,13 +7372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299987c4b1d1d05428dc485e89d4bb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  torqueAmount: 50
+  torqueAmount: 30
   boostSpeed: 35
   jumpForce: 15
+  isGrounded: 0
   snowEffect: {fileID: 5902861953598086674}
   boostEffect: {fileID: 6463813841548978527}
   scoreManager: {fileID: 0}
-  isGrounded: 0
 --- !u!114 &3886996216879281175
 MonoBehaviour:
   m_ObjectHideFlags: 0
